@@ -7,11 +7,14 @@ int main()
 	clock_t start1, end1, start2, end2, start3, end3, start4, end4;
 	char *vector, *rotate;
 	int length, rot, G = 0;
+	int plusminus = 0;
 	printf("Enter the String distance and Rotate distance : ");
 	scanf_s("%d %d", &length, &rot);
 	if (rot < 0)
-		rot = length + rot;
-	length = length - rot;
+	{
+		rot = abs(rot);
+		plusminus = 1;
+	}
 	G = gcd(length, rot);
 	vector = (char *)malloc(sizeof(char)*(length * 2));
 	rotate = (char *)malloc(sizeof(char)*(length * 2));
@@ -22,7 +25,7 @@ int main()
 		printf("%c", vector[i]);
 	}
 	printf("\n");
-
+	
 	strcpy(rotate, vector);
 	printf("\nTrivial Solution : ");
 	start1 = clock();
@@ -36,14 +39,22 @@ int main()
 	Rev(length, rot, rotate);
 	end2 = clock();
 	puts(rotate);
-
+	
 	strcpy(rotate, vector);
 	printf("Jugging          : ");
+	if (plusminus == 0)
+	{
 	start3 = clock();
-	jug(rot, length, rotate, G);
+		jug(rot, length, rotate, G);
+	}
+	else if (plusminus ==1)
+	{
+		start3 = clock();
+		mjug(rot, length, rotate, G);
+	}
 	end3 = clock();
 	puts(rotate);
-
+	
 	strcpy(rotate, vector);
 	printf("Block - Swap     : ");
 	start4 = clock();
