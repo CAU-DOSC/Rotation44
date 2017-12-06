@@ -7,6 +7,7 @@
 
 char *trivial(char *str, int n, int d);
 void* jug(int d, int num, char *vector, int gcd);
+void *mjug(int d, int num, char *vector, int gcd);
 int gcd(int num, int d);
 void BS(int Length, int D, char* Str);
 void Swap(int a, int z, int sD, char* Str);

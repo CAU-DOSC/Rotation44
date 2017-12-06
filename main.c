@@ -27,24 +27,21 @@ int main()
 	printf("\n");
 	
 	strcpy(rotate, vector);
-	printf("\nTrivial Solution : ");
 	start1 = clock();
 	trivial(rotate, length, rot);
 	end1 = clock();
-	puts(rotate);
+	printf("\nTrivial Solution : %s", rotate);
 
 	strcpy(rotate, vector);
-	printf("Reverse          : ");
 	start2 = clock();
 	Rev(length, rot, rotate);
 	end2 = clock();
-	puts(rotate);
+	printf("\nReverse          : %s", rotate);
 	
 	strcpy(rotate, vector);
-	printf("Jugging          : ");
 	if (plusminus == 0)
 	{
-	start3 = clock();
+		start3 = clock();
 		jug(rot, length, rotate, G);
 	}
 	else if (plusminus ==1)
@@ -53,18 +50,25 @@ int main()
 		mjug(rot, length, rotate, G);
 	}
 	end3 = clock();
-	puts(rotate);
+	printf("\nJuggling         : %s", rotate);
 	
 	strcpy(rotate, vector);
-	printf("Block - Swap     : ");
-	start4 = clock();
-	BS(length, rot, rotate);
+	if (plusminus == 0)
+	{
+		start4 = clock();
+		BS(length, rot, rotate);
+	}
+	else if (plusminus == 1)
+	{
+		start4 = clock();
+		mBS(length, rot, rotate);
+	}
 	end4 = clock();
-	puts(rotate);
+	printf("\nBlock - Swap     : %s\n", rotate);
 
 	printf("\nTrivial Solution Running Time : %fms", (double)(end1 - start1));
-	printf("\nReverse Running Time      : %fms", (double)(end2 - start2));
-	printf("\nJugging Running Time      : %fms", (double)(end3 - start3));
+	printf("\nReverse Running Time          : %fms", (double)(end2 - start2));
+	printf("\nJugging Running Time          : %fms", (double)(end3 - start3));
 	printf("\nBlock - Swap Running Time     : %fms", (double)(end4 - start4));
 	return 0;
 	
