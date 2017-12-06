@@ -4,6 +4,8 @@ void BS(int Length, int D, char* Str)      //BlockSwap
 {
 	int A = 0, Z = Length - 1;             //맨처음 맨끝 좌표
 	int L = D, R = Length - D;             //좌 우 길이
+	if (D == 0)
+		return 0;
 	while (L != R)                         //좌 우 길이가 같지않을때까지 반복
 	{
 		if (L < R)
@@ -25,6 +27,8 @@ void mBS(int Length, int D, char* Str)     //BlockSwap
 {
 	int A = 0, Z = Length - 1;             //맨처음 맨끝 좌표
 	int L = Length - D, R = D;             //좌 우 길이
+	if (D == 0)
+		return 0;
 	while (L != R)                         //좌 우 길이가 같지않을때까지 반복
 	{
 		if (L < R)

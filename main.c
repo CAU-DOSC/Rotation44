@@ -19,12 +19,7 @@ int main()
 	vector = (char *)malloc(sizeof(char)*(length * 2));
 	rotate = (char *)malloc(sizeof(char)*(length * 2));
 	gendata(vector, length);
-	printf("랜덤으로 받은 문자열 : ");
-	for (int i = 0; i < length; i++)
-	{
-		printf("%c", vector[i]);
-	}
-	printf("\n");
+	printf("랜덤으로 받은 문자열 : %s\n",vector);
 	
 	strcpy(rotate, vector);
 	start1 = clock();
