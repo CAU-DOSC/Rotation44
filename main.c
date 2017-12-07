@@ -72,9 +72,8 @@ int main()
 	printf("\nTrivial Solution Running Time : %fms", (double)(end1 - start1));
 	printf("\nReverse Running Time          : %fms", (double)(end2 - start2));
 	printf("\nJugging Running Time          : %fms", (double)(end3 - start3));
-	printf("\nBlock - Swap Running Time     : %fms", (double)(end4 - start4));
+	printf("\nBlock - Swap Running Time     : %fms\n", (double)(end4 - start4));
 	return 0;
-	
 }
 
 void gendata(char* CharArrayOfLength, int N)
