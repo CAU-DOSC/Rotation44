@@ -28,8 +28,16 @@ int main()
 	printf("\nTrivial Solution : %s", rotate);
 
 	strcpy(rotate, vector);
-	start2 = clock();
-	Rev(length, rot, rotate);
+	if (plusminus == 0)
+	{
+		start2 = clock();
+		Rev(length, rot, rotate);
+	}
+	else if (plusminus == 1)
+	{
+		start2 = clock();
+		Rev(length, length - rot, rotate);
+	}
 	end2 = clock();
 	printf("\nReverse          : %s", rotate);
 	
