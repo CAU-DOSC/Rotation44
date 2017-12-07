@@ -18,7 +18,7 @@ void *trivial(char *str, int n, int d)
 	}
 	else
 	{
-		d -= d;
+		d = d * (-1);
 		for (int i = 0; i < d; i++)
 		{
 			temp = str[n - 1];

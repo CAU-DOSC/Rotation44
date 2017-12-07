@@ -10,11 +10,8 @@ int main()
 	int plusminus = 0;
 	printf("Enter the String distance and Rotate distance : ");
 	scanf_s("%d %d", &length, &rot);
-	if (rot < 0)
-	{
-		rot = abs(rot);
-		plusminus = 1;
-	}
+	
+
 	G = gcd(length, rot);
 	vector = (char *)malloc(sizeof(char)*(length * 2));
 	rotate = (char *)malloc(sizeof(char)*(length * 2));
@@ -27,12 +24,21 @@ int main()
 	end1 = clock();
 	printf("\nTrivial Solution : %s", rotate);
 
+	if (rot < 0)
+	{
+		rot = abs(rot);
+		plusminus = 1;
+	}
+
 	strcpy(rotate, vector);
 	if (plusminus == 0)
 	{
 		start2 = clock();
 		Rev(length, rot, rotate);
 	}
+
+
+
 	else if (plusminus == 1)
 	{
 		start2 = clock();
